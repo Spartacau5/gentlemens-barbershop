@@ -59,22 +59,71 @@
           "postalCode": "11206",
           "addressCountry": "US"
         },
-        "sameAs": ["https://www.gentlemensbarbershopnyc.com/"],
+        "email": "gentlemensbarbershopusa1inc@gmail.com",
+        "priceRange": "$15-$170",
+        "currenciesAccepted": "USD",
+        "areaServed": ["Williamsburg", "East Williamsburg", "Bushwick", "Greenpoint", "Brooklyn"],
+        "sameAs": [
+          "https://www.gentlemensbarbershopnyc.com/",
+          "https://www.instagram.com/gentlemensbarbershopbrooklyn/",
+          "https://www.facebook.com/GentlemensBarbershopBrooklyn",
+          "https://www.tiktok.com/@gentlemensbarbershopbk"
+        ],
+        "hasMap": "https://www.google.com/maps/dir/?api=1&destination=205%20Johnson%20Ave%2C%20Brooklyn%2C%20NY%2011206",
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://link.booksy.com/gentlemens-barbershop",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          },
+          "result": { "@type": "Reservation", "name": "Barbershop appointment" }
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "10:30",
+            "closes": "19:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Friday",
+            "opens": "10:00",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "09:30",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ],
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.8",
           "reviewCount": "663"
         },
         "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Men's Haircut" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skin Fade" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Beard Trim" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Straight Razor Shave" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hot Towel Treatment" } },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Head, Face & Shoulder Massage" }
-          }
+          { "@type": "Offer", "priceCurrency": "USD", "price": "70", "itemOffered": { "@type": "Service", "name": "Gentleman's Haircut" } },
+          { "@type": "Offer", "priceCurrency": "USD", "price": "60", "itemOffered": { "@type": "Service", "name": "Junior Haircut" } },
+          { "@type": "Offer", "priceCurrency": "USD", "price": "80", "itemOffered": { "@type": "Service", "name": "Precision Scissor Haircut" } },
+          { "@type": "Offer", "priceCurrency": "USD", "price": "90", "itemOffered": { "@type": "Service", "name": "Long Hair Specialist Cut" } },
+          { "@type": "Offer", "priceCurrency": "USD", "price": "170", "itemOffered": { "@type": "Service", "name": "Luxury House Call Haircut" } },
+          { "@type": "Offer", "priceCurrency": "USD", "price": "45", "itemOffered": { "@type": "Service", "name": "Beard Trim & Shape" } },
+          { "@type": "Offer", "priceCurrency": "USD", "price": "75", "itemOffered": { "@type": "Service", "name": "Classic Hot Towel Shave" } },
+          { "@type": "Offer", "priceCurrency": "USD", "price": "45", "itemOffered": { "@type": "Service", "name": "Beard Line-Up" } },
+          { "@type": "Offer", "priceCurrency": "USD", "price": "145", "itemOffered": { "@type": "Service", "name": "Full Package - Haircut + Shave" } },
+          { "@type": "Offer", "priceCurrency": "USD", "price": "170", "itemOffered": { "@type": "Service", "name": "Gentlemen's Luxury Experience" } }
         ]
       }
     </script>
@@ -95,7 +144,7 @@
           <a class="gb-btn gb-btn--ghost gb-btn--sm" href="tel:+19174153266">Call</a>
           <a
             class="gb-btn gb-btn--solid gb-btn--sm"
-            href="https://www.gentlemensbarbershopnyc.com/"
+            href="https://link.booksy.com/gentlemens-barbershop"
             target="_blank"
             rel="noopener noreferrer"
             >Book</a
@@ -147,7 +196,7 @@
               <div class="gb-cta-stack">
                 <a
                   class="gb-btn gb-btn--solid"
-                  href="https://www.gentlemensbarbershopnyc.com/"
+                  href="https://link.booksy.com/gentlemens-barbershop"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Book an appointment</a
@@ -181,9 +230,14 @@
                 chair.
               </p>
               <p class="gb-lede" style="margin-top: 1.1rem">
+                Precision scissor work and skin fades are the everyday, and the shop keeps
+                long-hair specialists on the floor for cuts that most barbers would rather not
+                take on.
+              </p>
+              <p class="gb-lede" style="margin-top: 1.1rem">
                 It is the kind of room people come back to: quiet enough to hear yourself think,
                 warm enough to stay a while, and detailed enough that the cut still sits right two
-                weeks later.
+                weeks later. An easy walk from Bushwick and Greenpoint.
               </p>
             </div>
 
@@ -211,63 +265,56 @@
               <h2 class="gb-h2" id="services-h">What happens in the chair</h2>
             </div>
 
-            <div class="gb-services">
-              <article class="gb-service gb-reveal" data-reveal-delay="0">
-                <p class="gb-service-num" aria-hidden="true">01</p>
-                <h3>Men&rsquo;s Haircut</h3>
-                <p style="grid-column: 2">
-                  A consultation first, then a cut built around how you actually wear your hair day
-                  to day.
-                </p>
-              </article>
-              <article class="gb-service gb-reveal" data-reveal-delay="60">
-                <p class="gb-service-num" aria-hidden="true">02</p>
-                <h3>Skin Fade</h3>
-                <p style="grid-column: 2">
-                  Blended tight and taken down to the skin, with the weight and line kept clean
-                  through the sides.
-                </p>
-              </article>
-              <article class="gb-service gb-reveal" data-reveal-delay="120">
-                <p class="gb-service-num" aria-hidden="true">03</p>
-                <h3>Beard Trim</h3>
-                <p style="grid-column: 2">
-                  Shaped, lined and softened so the beard reads sharp from every angle, not just
-                  head-on.
-                </p>
-              </article>
-              <article class="gb-service gb-reveal" data-reveal-delay="180">
-                <p class="gb-service-num" aria-hidden="true">04</p>
-                <h3>Straight Razor Shave</h3>
-                <p style="grid-column: 2">The traditional razor shave, worked slowly and finished close.</p>
-              </article>
-              <article class="gb-service gb-reveal" data-reveal-delay="240">
-                <p class="gb-service-num" aria-hidden="true">05</p>
-                <h3>Hot Towel Treatment</h3>
-                <p style="grid-column: 2">
-                  The eucalyptus hot-towel wrap that regulars single out by name in their reviews.
-                </p>
-              </article>
-              <article class="gb-service gb-reveal" data-reveal-delay="300">
-                <p class="gb-service-num" aria-hidden="true">06</p>
-                <h3>Head, Face &amp; Shoulder Massage</h3>
-                <p style="grid-column: 2">
-                  The old-school finish — a massage through the face, shoulders and scalp before you
-                  leave the chair.
-                </p>
-              </article>
+            <div class="gb-menu">
+              <div class="gb-menu-group gb-reveal">
+                <h3 class="gb-menu-h">Haircuts</h3>
+                <dl class="gb-menu-list">
+                  <div><dt>Gentleman&rsquo;s Haircut</dt><dd>$70</dd></div>
+                  <div><dt>Junior Haircut</dt><dd>$60</dd></div>
+                  <div><dt>Precision Scissor Haircut</dt><dd>$80</dd></div>
+                  <div><dt>Long Hair Specialist Cut</dt><dd>$90</dd></div>
+                  <div><dt>Luxury House Call Haircut</dt><dd>$170</dd></div>
+                </dl>
+              </div>
+
+              <div class="gb-menu-group gb-reveal" data-reveal-delay="90">
+                <h3 class="gb-menu-h">Shaving &amp; Beard</h3>
+                <dl class="gb-menu-list">
+                  <div><dt>Beard Trim &amp; Shape</dt><dd>$45</dd></div>
+                  <div><dt>Classic Hot Towel Shave</dt><dd>$75</dd></div>
+                  <div><dt>Beard Line-Up</dt><dd>$45</dd></div>
+                </dl>
+              </div>
+
+              <div class="gb-menu-group gb-reveal" data-reveal-delay="180">
+                <h3 class="gb-menu-h">Grooming Packages</h3>
+                <dl class="gb-menu-list">
+                  <div><dt>Full Package — Haircut + Shave</dt><dd>$145</dd></div>
+                  <div><dt>Gentlemen&rsquo;s Luxury Experience</dt><dd>$170</dd></div>
+                </dl>
+              </div>
+
+              <div class="gb-menu-group gb-reveal" data-reveal-delay="270">
+                <h3 class="gb-menu-h">Add-Ons</h3>
+                <dl class="gb-menu-list">
+                  <div><dt>Facial Mask</dt><dd>$25</dd></div>
+                  <div><dt>Eyebrow Shaping</dt><dd>$15</dd></div>
+                  <div><dt>Luxury Shampoo</dt><dd>$15</dd></div>
+                  <div><dt>Hot Towel Treatment</dt><dd>$15</dd></div>
+                </dl>
+              </div>
             </div>
 
             <p class="gb-note gb-reveal">
-              The full menu and current availability live on the booking page —
+              Prices as published by the shop and subject to change —
               <a
                 class="gb-link-brass"
-                href="https://www.gentlemensbarbershopnyc.com/"
+                href="https://link.booksy.com/gentlemens-barbershop"
                 target="_blank"
                 rel="noopener noreferrer"
                 >book online</a
               >
-              or call <a class="gb-link-brass" href="tel:+19174153266">(917) 415-3266</a>.
+              or call <a class="gb-link-brass" href="tel:+19174153266">(917) 415-3266</a> to confirm.
             </p>
           </div>
         </section>
@@ -288,6 +335,64 @@
             <p class="gb-eyebrow">The Finish</p>
             <p class="gb-quote" style="margin-top: 1.4rem">
               Hot towel, straight razor, and the time to do it properly.
+            </p>
+          </div>
+        </section>
+
+        <!-- ---------------- the work (auto-scrolling marquee) ---------------- -->
+        <section class="gb-section gb-work" aria-labelledby="work-h">
+          <div class="gb-shell">
+            <div class="gb-head gb-reveal">
+              <p class="gb-eyebrow">The Work</p>
+              <h2 class="gb-h2" id="work-h">Fresh out of the chair</h2>
+              <p class="gb-lede" style="margin-top: 1.3rem">
+                Cuts, fades and beard work from the shop&rsquo;s own gallery.
+              </p>
+            </div>
+          </div>
+
+          <!-- Two identical runs sit side by side; the track translates exactly
+               50% so the loop is seamless. The second run is hidden from
+               assistive tech to avoid announcing every photo twice. -->
+          <div class="gb-marquee" role="group" aria-label="Photos of recent haircuts">
+            <div class="gb-marquee-track">
+              <ul class="gb-marquee-run">
+                <li><img src="work-01.webp" alt="A client and his barber smiling in the mirror after a fresh cut." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-02.webp" alt="A client giving a thumbs up after his haircut." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-03.webp" alt="A fresh textured cut and lined beard." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-04.webp" alt="A tight skin fade blended through the sides." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-05.webp" alt="A short crop with a clean fade and beard trim." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-06.webp" alt="A fade finished with a shaped beard." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-07.webp" alt="A long hair cut styled back at the shop." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-08.webp" alt="A textured crop seen from behind." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-09.webp" alt="A clean high fade photographed outside the shop." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-10.webp" alt="A beard being detailed with shears." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-11.webp" alt="A skin fade in profile." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-12.webp" alt="A tapered cut with a lined beard." width="560" height="700" loading="lazy" decoding="async" /></li>
+              </ul>
+              <ul class="gb-marquee-run" aria-hidden="true">
+                <li><img src="work-01.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-02.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-03.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-04.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-05.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-06.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-07.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-08.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-09.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-10.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-11.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-12.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="gb-shell">
+            <p class="gb-note gb-reveal" style="margin-top: 2.2rem">
+              More on
+              <a class="gb-link-brass" href="https://www.instagram.com/gentlemensbarbershopbrooklyn/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              and in the
+              <a class="gb-link-brass" href="https://gentlemensbarbershopnyc.com/gallery/" target="_blank" rel="noopener noreferrer">full gallery</a>.
             </p>
           </div>
         </section>
@@ -349,19 +454,26 @@
                 <h3>Hours</h3>
                 <dl class="gb-dl">
                   <div>
-                    <dt>Doors open</dt>
-                    <dd>11:00 AM</dd>
+                    <dt>Monday &ndash; Thursday</dt>
+                    <dd>10:30 AM &ndash; 7:30 PM</dd>
                   </div>
                   <div>
-                    <dt>Public holidays</dt>
-                    <dd>Hours may differ</dd>
+                    <dt>Friday</dt>
+                    <dd>10:00 AM &ndash; 5:00 PM</dd>
+                  </div>
+                  <div>
+                    <dt>Saturday</dt>
+                    <dd class="gb-closed">Closed</dd>
+                  </div>
+                  <div>
+                    <dt>Sunday</dt>
+                    <dd>9:30 AM &ndash; 5:00 PM</dd>
                   </div>
                 </dl>
                 <p class="gb-note">
-                  Closing times vary by day, and holiday hours change. For today&rsquo;s hours and
-                  the next open chair, call
-                  <a class="gb-link-brass" href="tel:+19174153266">(917) 415-3266</a> or check the
-                  booking page.
+                  Holiday hours can differ. Call
+                  <a class="gb-link-brass" href="tel:+19174153266">(917) 415-3266</a> to confirm
+                  before you travel.
                 </p>
                 <p style="margin-top: 1.6rem">
                   <a class="gb-btn gb-btn--ghost gb-btn--sm" href="tel:+19174153266">Call the shop</a>
@@ -417,13 +529,18 @@
               <ul class="gb-foot-list">
                 <li><a href="tel:+19174153266">(917) 415-3266</a></li>
                 <li>
-                  <a href="https://www.gentlemensbarbershopnyc.com/" target="_blank" rel="noopener noreferrer"
-                    >gentlemensbarbershopnyc.com</a
+                  <a href="mailto:gentlemensbarbershopusa1inc@gmail.com" class="gb-foot-email"
+                    >gentlemensbarbershopusa1inc@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a href="https://link.booksy.com/gentlemens-barbershop" target="_blank" rel="noopener noreferrer"
+                    >Book on Booksy</a
                   >
                 </li>
                 <li>
                   <a href="https://www.gentlemensbarbershopnyc.com/" target="_blank" rel="noopener noreferrer"
-                    >Book an appointment</a
+                    >gentlemensbarbershopnyc.com</a
                   >
                 </li>
               </ul>
@@ -440,7 +557,26 @@
                     >205 Johnson Ave<br />Brooklyn, NY 11206</a
                   >
                 </li>
-                <li>Doors open 11:00 AM</li>
+                <li>Mon&ndash;Thu 10:30&ndash;7:30 &middot; Fri 10&ndash;5 &middot; Sun 9:30&ndash;5</li>
+              </ul>
+
+              <p class="gb-foot-h" style="margin-top: 1.8rem">Follow</p>
+              <ul class="gb-social">
+                <li>
+                  <a href="https://www.instagram.com/gentlemensbarbershopbrooklyn/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.42.4.68.8.9 1.4.17.4.37 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.4.42-.8.68-1.4.9-.4.17-1 .37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.42-.4-.68-.8-.9-1.4-.17-.4-.37-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.4-.42.8-.68 1.4-.9.4-.17 1-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2m0 2.16c-3.14 0-3.5.01-4.74.07-.9.04-1.38.19-1.7.31-.43.17-.73.37-1.05.69-.32.32-.52.62-.69 1.05-.12.32-.27.8-.31 1.7-.06 1.24-.07 1.6-.07 4.74s.01 3.5.07 4.74c.4.9.19 1.38.31 1.7.17.43.37.73.69 1.05.32.32.62.52 1.05.69.32.12.8.27 1.7.31 1.24.06 1.6.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.7-.31.43-.17.73-.37 1.05-.69.32-.32.52-.62.69-1.05.12-.32.27-.8.31-1.7.06-1.24.07-1.6.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.38-.31-1.7a2.9 2.9 0 0 0-.69-1.05 2.9 2.9 0 0 0-1.05-.69c-.32-.12-.8-.27-1.7-.31-1.24-.06-1.6-.07-4.74-.07m0 3.67a5.97 5.97 0 1 1 0 11.94 5.97 5.97 0 0 1 0-11.94m0 9.85a3.88 3.88 0 1 0 0-7.76 3.88 3.88 0 0 0 0 7.76m7.6-10.09a1.39 1.39 0 1 1-2.79 0 1.39 1.39 0 0 1 2.79 0"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.tiktok.com/@gentlemensbarbershopbk" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .52.04.76.12v-3.2a5.7 5.7 0 0 0-.76-.05A5.72 5.72 0 0 0 4.14 15.3 5.72 5.72 0 0 0 9.86 21a5.72 5.72 0 0 0 5.72-5.72V9.01a7.35 7.35 0 0 0 4.28 1.37V7.3a4.3 4.3 0 0 1-3.26-1.48"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/GentlemensBarbershopBrooklyn" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.91h-2.33V22c4.78-.79 8.44-4.93 8.44-9.94"/></svg>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

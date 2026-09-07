@@ -496,6 +496,58 @@ button { background: none; border: 0; cursor: pointer; }
   color: var(--gb-sand);
 }
 
+/* ---------- price menu ---------- */
+.gb-menu {
+  margin-top: 3.2rem;
+  display: grid;
+  gap: clamp(2.2rem, 4vw, 3.2rem) clamp(2rem, 5vw, 4.5rem);
+}
+
+@media (min-width: 760px) {
+  .gb-menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gb-menu-h {
+  font-family: var(--gb-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gb-brass);
+  font-weight: 500;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--gb-line);
+}
+
+.gb-menu-list {
+  margin: 0;
+  display: grid;
+}
+
+.gb-menu-list div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--gb-line-soft);
+}
+
+.gb-menu-list dt {
+  font-family: var(--gb-display);
+  font-size: 1.06rem;
+  color: var(--gb-cream);
+}
+
+.gb-menu-list dd {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--gb-brass-bright);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 /* ---------- quote band (parallax) ---------- */
 .gb-band {
   position: relative;
@@ -542,6 +594,76 @@ button { background: none; border: 0; cursor: pointer; }
   line-height: 1.22;
   max-width: 22ch;
   margin-inline: auto;
+}
+
+/* ---------- the work (marquee) ---------- */
+.gb-work {
+  overflow: hidden;
+}
+
+.gb-marquee {
+  margin-top: 3rem;
+  overflow: hidden;
+  /* Fade the runway into the page at both ends instead of cutting it hard. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.gb-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: gb-marquee 64s linear infinite;
+  will-change: transform;
+}
+
+/* Hovering holds the strip so a photo can actually be looked at. */
+.gb-marquee:hover .gb-marquee-track,
+.gb-marquee:focus-within .gb-marquee-track {
+  animation-play-state: paused;
+}
+
+.gb-marquee-run {
+  display: flex;
+  gap: 1rem;
+  padding: 0 0.5rem 0 0;
+  margin: 0;
+  list-style: none;
+  flex: none;
+}
+
+.gb-marquee-run li {
+  flex: none;
+  width: clamp(168px, 20vw, 232px);
+}
+
+.gb-marquee-run img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--gb-line-soft);
+  border-radius: 2px;
+  /* The photos are the shop's own phone shots in mixed daylight. A light,
+     uniform grade settles them into the page; hover restores them exactly. */
+  filter: saturate(0.82) contrast(1.04) brightness(0.9);
+  transition:
+    filter 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.gb-marquee-run img:hover {
+  filter: none;
+  border-color: var(--gb-line);
+}
+
+/* Translating exactly -50% lands run two precisely where run one began. */
+@keyframes gb-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 /* ---------- reviews ---------- */
@@ -704,6 +826,48 @@ button { background: none; border: 0; cursor: pointer; }
   color: var(--gb-brass-bright);
 }
 
+.gb-foot-email {
+  /* The address is long; let it wrap rather than widen the footer column. */
+  overflow-wrap: anywhere;
+}
+
+.gb-social {
+  display: flex;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gb-social a {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--gb-line-soft);
+  border-radius: 2px;
+  color: var(--gb-sand);
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.gb-social a:hover {
+  color: var(--gb-brass-bright);
+  border-color: var(--gb-line);
+  background: rgba(201, 144, 63, 0.1);
+}
+
+.gb-social svg {
+  width: 17px;
+  height: 17px;
+}
+
+.gb-closed {
+  color: var(--gb-sand) !important;
+}
+
 .gb-colophon {
   margin-top: 3rem;
   padding-top: 1.6rem;
@@ -790,5 +954,26 @@ button { background: none; border: 0; cursor: pointer; }
 
   .gb-scrollcue i {
     animation: none;
+  }
+
+  /* The marquee stops moving, but the photos must stay reachable — so the
+     strip becomes a normal horizontal scroller the visitor drives. */
+  .gb-marquee-track {
+    animation: none;
+    transform: none !important;
+  }
+
+  .gb-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .gb-marquee-run[aria-hidden="true"] {
+    display: none;
+  }
+
+  .gb-marquee-run img {
+    filter: none;
   }
 }
