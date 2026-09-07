@@ -50,6 +50,10 @@ Content is limited to facts published on the shop's Google Business listing.
 There are deliberately **no prices, founding date, awards, or staff claims** —
 none were available, and inventing them would be misleading.
 
+The ownership tags Google lists (veteran-, Asian-, and LGBTQ+-owned) were
+removed at the client's request pending confirmation. They are self-reported on
+Google and were not verified with the shop. Add them back only once confirmed.
+
 The listing only exposes an opening time (11:00 AM), not a full weekly
 schedule, so the Hours panel states that and directs visitors to call. If you
 have the real weekly hours, add them to the `gb-dl` list in the Hours panel and

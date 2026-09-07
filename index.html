@@ -87,7 +87,10 @@
       <div class="gb-grain" aria-hidden="true"></div>
 
       <header class="gb-nav" data-stuck="false">
-        <a class="gb-mark" href="#top">Gentlemen&rsquo;s <span>Barbershop</span></a>
+        <a class="gb-mark" href="#top" aria-label="Gentlemen's Barbershop">
+          <img class="gb-mark-logo" src="logo.png" alt="" width="300" height="289" />
+          <span class="gb-mark-text" aria-hidden="true">Gentlemen&rsquo;s <span>Barbershop</span></span>
+        </a>
         <div class="gb-nav-actions">
           <a class="gb-btn gb-btn--ghost gb-btn--sm" href="tel:+19174153266">Call</a>
           <a
@@ -125,6 +128,13 @@
 
           <!-- Depth 3 — type rides slightly ahead of the page, reading closest. -->
           <div class="gb-shell gb-hero-inner" data-parallax="-28">
+            <img
+              class="gb-hero-logo"
+              src="logo.png"
+              alt="Gentlemen's Barbershop"
+              width="300"
+              height="289"
+            />
             <p class="gb-eyebrow">East Williamsburg &middot; Brooklyn</p>
             <h1 class="gb-hero-title">Gentlemen&rsquo;s<br />Barbershop</h1>
             <p class="gb-hero-sub">
@@ -133,20 +143,26 @@
             </p>
 
             <div class="gb-hero-cta">
-              <a
-                class="gb-btn gb-btn--solid"
-                href="https://www.gentlemensbarbershopnyc.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Book an appointment</a
-              >
-              <a class="gb-btn gb-btn--ghost" href="tel:+19174153266">(917) 415-3266</a>
+              <!-- Column so the review badge inherits the booking button's width. -->
+              <div class="gb-cta-stack">
+                <a
+                  class="gb-btn gb-btn--solid"
+                  href="https://www.gentlemensbarbershopnyc.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Book an appointment</a
+                >
+                <p class="gb-rating">
+                  <span class="gb-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                  <span class="gb-rating-text">
+                    <b>4.8</b> from 663
+                    <img class="gb-g" src="google-g.svg" alt="Google" width="16" height="16" />
+                    reviews
+                  </span>
+                </p>
+              </div>
+              <a class="gb-btn gb-btn--ghost gb-btn--tel" href="tel:+19174153266">(917) 415-3266</a>
             </div>
-
-            <p class="gb-rating">
-              <span class="gb-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              <span><b>4.8</b> from 663 Google reviews</span>
-            </p>
           </div>
 
           <p class="gb-scrollcue" aria-hidden="true"><i></i>Scroll</p>
@@ -169,12 +185,6 @@
                 warm enough to stay a while, and detailed enough that the cut still sits right two
                 weeks later.
               </p>
-              <ul class="gb-traits">
-                <li>LGBTQ+ friendly</li>
-                <li>LGBTQ+ owned</li>
-                <li>Veteran owned</li>
-                <li>Asian owned</li>
-              </ul>
             </div>
 
             <figure class="gb-figure gb-figure--tall gb-reveal" data-reveal-delay="120" style="margin: 0">
@@ -389,9 +399,13 @@
         <div class="gb-shell">
           <div class="gb-foot-grid">
             <div>
-              <p class="gb-mark" style="font-size: 1.3rem">
-                Gentlemen&rsquo;s <span>Barbershop</span>
-              </p>
+              <img
+                class="gb-foot-logo"
+                src="logo.png"
+                alt="Gentlemen's Barbershop"
+                width="300"
+                height="289"
+              />
               <hr class="gb-rule" style="margin: 1.2rem 0; max-width: 8rem" />
               <p class="gb-lede" style="max-width: 22rem; font-size: 0.95rem">
                 Classic barbering in East Williamsburg, Brooklyn.

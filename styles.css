@@ -140,6 +140,9 @@ button { background: none; border: 0; cursor: pointer; }
 }
 
 .gb-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--gb-display);
   font-size: 1.06rem;
   letter-spacing: 0.03em;
@@ -147,8 +150,39 @@ button { background: none; border: 0; cursor: pointer; }
   white-space: nowrap;
 }
 
-.gb-mark span {
+.gb-mark-text span {
   color: var(--gb-brass);
+}
+
+/* The supplied logo is white line-art on a keyed-out background, so it needs no
+   plate of its own — it reads directly on the dark ground. */
+.gb-mark-logo {
+  width: 34px;
+  height: auto;
+  flex: none;
+}
+
+.gb-hero-logo {
+  width: clamp(64px, 9vw, 92px);
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.gb-foot-logo {
+  width: 92px;
+  height: auto;
+}
+
+/* On narrow screens the logo alone carries the nav, so the two buttons keep
+   their room. The link's aria-label supplies the name the text was giving. */
+@media (max-width: 560px) {
+  .gb-mark-text {
+    display: none;
+  }
+
+  .gb-mark-logo {
+    width: 40px;
+  }
 }
 
 .gb-nav-actions {
@@ -266,14 +300,27 @@ button { background: none; border: 0; cursor: pointer; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  /* Keep the phone button at its natural height rather than stretching to the
+     height of the booking column beside it. */
+  align-items: flex-start;
+}
+
+/* The booking button and the review badge share a column, so the badge takes
+   its width from the button above it. */
+.gb-cta-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.8rem;
 }
 
 .gb-rating {
-  margin-top: 2.1rem;
-  display: inline-flex;
+  display: flex;
+  width: 100%;
+  justify-content: center;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.55rem 1rem;
+  gap: 0.55rem;
+  padding: 0.55rem 0.85rem;
   border: 1px solid var(--gb-line);
   border-radius: 2px;
   background: rgba(11, 10, 9, 0.42);
@@ -292,6 +339,22 @@ button { background: none; border: 0; cursor: pointer; }
 .gb-rating b {
   color: var(--gb-cream);
   font-weight: 600;
+}
+
+.gb-rating-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32em;
+  white-space: nowrap;
+}
+
+/* Google's G, used to attribute the reviews to their source. */
+.gb-g {
+  width: 0.95em;
+  height: 0.95em;
+  display: inline-block;
+  vertical-align: -0.13em;
+  flex: none;
 }
 
 .gb-scrollcue {
@@ -382,25 +445,6 @@ button { background: none; border: 0; cursor: pointer; }
 
 .gb-figure--tall {
   aspect-ratio: 4 / 3.2;
-}
-
-.gb-traits {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-}
-
-.gb-traits li {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gb-sand);
-  border: 1px solid var(--gb-line-soft);
-  border-radius: 2px;
-  padding: 0.42rem 0.75rem;
 }
 
 /* ---------- services ---------- */
