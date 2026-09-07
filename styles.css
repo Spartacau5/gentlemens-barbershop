@@ -501,12 +501,21 @@ button { background: none; border: 0; cursor: pointer; }
   margin-top: 3.2rem;
   display: grid;
   gap: clamp(2.2rem, 4vw, 3.2rem) clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
 }
 
 @media (min-width: 760px) {
   .gb-menu {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* Each column stacks its own groups, so group heights are independent across
+   columns — no stretched row leaving a gap beneath a short group. */
+.gb-menu-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.2rem, 4vw, 3.2rem);
 }
 
 .gb-menu-h {
