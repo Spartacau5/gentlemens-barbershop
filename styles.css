@@ -496,26 +496,33 @@ button { background: none; border: 0; cursor: pointer; }
   color: var(--gb-sand);
 }
 
+.gb-menu + .gb-note {
+  margin-top: 0;
+  padding-top: 1.55rem;
+  border-top: 1px solid var(--gb-line-soft);
+}
+
 /* ---------- price menu ---------- */
 .gb-menu {
   margin-top: 3.2rem;
-  display: grid;
+  margin-bottom: 0;
+  padding-bottom: 2.2rem;
+  display: flex;
+  flex-wrap: wrap;
   gap: clamp(2.2rem, 4vw, 3.2rem) clamp(2rem, 5vw, 4.5rem);
-  align-items: start;
+  align-items: flex-start;
 }
 
-@media (min-width: 760px) {
-  .gb-menu {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Each column stacks its own groups, so group heights are independent across
-   columns — no stretched row leaving a gap beneath a short group. */
 .gb-menu-col {
+  flex: 1 1 16rem;
   display: flex;
   flex-direction: column;
-  gap: clamp(2.2rem, 4vw, 3.2rem);
+  justify-content: flex-start;
+  gap: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.gb-menu-group {
+  flex: 0 0 auto;
 }
 
 .gb-menu-h {
@@ -543,6 +550,11 @@ button { background: none; border: 0; cursor: pointer; }
   border-bottom: 1px solid var(--gb-line-soft);
 }
 
+.gb-menu-list div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0.2rem;
+}
+
 .gb-menu-list dt {
   font-family: var(--gb-display);
   font-size: 1.06rem;
@@ -555,6 +567,78 @@ button { background: none; border: 0; cursor: pointer; }
   color: var(--gb-brass-bright);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+}
+
+/* ---------- the shop on film ---------- */
+.gb-film {
+  position: relative;
+  margin-top: 3rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--gb-line);
+  border-radius: 2px;
+  background: var(--gb-ink-card);
+}
+
+.gb-film iframe,
+.gb-film-play {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.gb-film-play {
+  display: block;
+  padding: 0;
+  cursor: pointer;
+}
+
+.gb-film-play img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Settles the daylight thumbnail into the page; lifts on hover. */
+  filter: saturate(0.85) contrast(1.03) brightness(0.82);
+  transition: filter 0.5s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gb-film-play:hover img,
+.gb-film-play:focus-visible img {
+  filter: none;
+  transform: scale(1.02);
+}
+
+.gb-film-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: clamp(60px, 7vw, 84px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(11, 10, 9, 0.6);
+  border: 1px solid var(--gb-brass);
+  color: var(--gb-brass-bright);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background-color 0.35s ease, transform 0.35s ease;
+}
+
+.gb-film-play:hover .gb-film-btn,
+.gb-film-play:focus-visible .gb-film-btn {
+  background: var(--gb-brass);
+  color: #120d06;
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.gb-film-btn svg {
+  width: 38%;
+  height: 38%;
+  margin-left: 8%;
 }
 
 /* ---------- quote band (parallax) ---------- */
@@ -682,10 +766,46 @@ button { background: none; border: 0; cursor: pointer; }
   gap: 1.1rem;
 }
 
-@media (min-width: 860px) {
+/* Two across, not four: at four the quotes broke to two or three words a line,
+   which is unreadable. Two columns keep a comfortable measure. */
+@media (min-width: 700px) {
   .gb-reviews {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* Stars left, source badge right, sharing one line at the top of the card. */
+.gb-review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.gb-review-mark {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  opacity: 0.95;
+}
+
+/* Stand-in badge for a quote that did not come from a review platform. */
+.gb-review-quote {
+  display: grid;
+  place-items: center;
+  font-family: var(--gb-display);
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--gb-brass);
+  transform: translateY(0.22em);
+}
+
+.gb-review-kicker {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gb-brass);
+  font-weight: 500;
 }
 
 .gb-review {
@@ -728,6 +848,14 @@ button { background: none; border: 0; cursor: pointer; }
   letter-spacing: 0.02em;
   margin-bottom: 0.15rem;
   font-size: 0.86rem;
+}
+
+/* Name on its own line, when/where on the line beneath it. */
+.gb-review figcaption span {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--gb-sand);
+  overflow-wrap: anywhere;
 }
 
 /* ---------- visit (hours + location) ---------- */

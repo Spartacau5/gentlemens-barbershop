@@ -128,6 +128,36 @@
     reduceMotion.addListener(onMotionPreferenceChange);
   }
 
+  /* ---------------- click-to-load YouTube ---------------- */
+  // The poster is a local image, so the page makes no request to YouTube and
+  // sets no third-party cookie until the visitor actually asks for the video.
+  var filmBtn = document.querySelector(".gb-film-play");
+
+  if (filmBtn) {
+    filmBtn.addEventListener(
+      "click",
+      function () {
+        var id = filmBtn.getAttribute("data-video");
+        if (!id) return;
+
+        var frame = document.createElement("iframe");
+        frame.src =
+          "https://www.youtube-nocookie.com/embed/" +
+          encodeURIComponent(id) +
+          "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+        frame.title = filmBtn.getAttribute("aria-label") || "Video";
+        frame.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        frame.setAttribute("allowfullscreen", "");
+        frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+
+        filmBtn.parentNode.replaceChild(frame, filmBtn);
+        frame.focus();
+      },
+      { once: true }
+    );
+  }
+
   /* ---------------- hero video ---------------- */
   // Safari and some mobile browsers ignore the autoplay attribute until a script
   // asks. Muted + playsinline keeps the request inside autoplay policy; if it is
