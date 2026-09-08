@@ -217,91 +217,65 @@
           <p class="gb-scrollcue" aria-hidden="true"><i></i>Scroll</p>
         </section>
 
-        <!-- ---------------- about ---------------- -->
-        <section class="gb-section" aria-labelledby="about-h">
-          <div class="gb-shell gb-about" data-parallax-root>
-            <div class="gb-reveal">
-              <p class="gb-eyebrow">The Shop</p>
-              <h2 class="gb-h2" id="about-h">A steady chair on Johnson Ave</h2>
-              <p class="gb-lede" style="margin-top: 1.4rem">
-                Gentlemen&rsquo;s Barbershop is a neighbourhood barbershop in East Williamsburg, a
-                few blocks off the Montrose Ave stop. The work is classic barbering — clippers,
-                shears and the straight razor — done carefully and without rushing you out of the
-                chair.
-              </p>
-              <p class="gb-lede" style="margin-top: 1.1rem">
-                Precision scissor work and skin fades are the everyday, and the shop keeps
-                long-hair specialists on the floor for cuts that most barbers would rather not
-                take on.
-              </p>
-              <p class="gb-lede" style="margin-top: 1.1rem">
-                It is the kind of room people come back to: quiet enough to hear yourself think,
-                warm enough to stay a while, and detailed enough that the cut still sits right two
-                weeks later. An easy walk from Bushwick and Greenpoint.
-              </p>
-            </div>
-
-            <figure class="gb-figure gb-figure--tall gb-reveal" data-reveal-delay="120" style="margin: 0">
-              <!-- Mid-depth layer: the image drifts gently inside its frame. -->
-              <img
-                src="tools.webp"
-                alt="A straight razor, shears, a shaving brush, a comb and a jar of pomade laid out on a dark wooden counter."
-                width="1200"
-                height="900"
-                loading="lazy"
-                decoding="async"
-                data-parallax="46"
-                style="height: 116%; margin-top: -8%"
-              />
-            </figure>
-          </div>
-        </section>
-
-        <!-- ---------------- the shop on film ---------------- -->
-        <section class="gb-section gb-film-section" aria-labelledby="film-h">
+<!-- ---------------- the work (auto-scrolling marquee) ---------------- -->
+        <section class="gb-section gb-work" aria-labelledby="work-h">
           <div class="gb-shell">
             <div class="gb-head gb-reveal">
-              <p class="gb-eyebrow">Meet the shop</p>
-              <h2 class="gb-h2" id="film-h">A minute inside</h2>
+              <p class="gb-eyebrow">The Work</p>
+              <h2 class="gb-h2" id="work-h">Fresh out of the chair</h2>
               <p class="gb-lede" style="margin-top: 1.3rem">
-                A walk through the room, from the man who runs it.
+                Cuts, fades and beard work from the shop&rsquo;s own gallery.
               </p>
             </div>
+          </div>
 
-            <!-- Click-to-load facade. Nothing is requested from YouTube until
-                 someone presses play — the poster is served from this domain —
-                 so the page costs no third-party JS or cookies on load. -->
-            <div class="gb-film gb-reveal" data-reveal-delay="120">
-              <button
-                class="gb-film-play"
-                type="button"
-                data-video="HdtMlkblghU"
-                aria-label="Play video: Williamsburg's Finest Cuts Are Here — inside Gentlemen's Barbershop"
-              >
-                <img
-                  src="video-poster.webp"
-                  alt="The shop's owner sitting in the barber chair, talking to camera."
-                  width="1280"
-                  height="720"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span class="gb-film-btn" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M8 5.14v13.72L19 12z" /></svg>
-                </span>
-              </button>
+          <!-- Two identical runs sit side by side; the track translates exactly
+               50% so the loop is seamless. The second run is hidden from
+               assistive tech to avoid announcing every photo twice. -->
+          <div class="gb-marquee" role="group" aria-label="Photos of recent haircuts">
+            <div class="gb-marquee-track">
+              <ul class="gb-marquee-run">
+                <li><img src="work-01.webp" alt="A client and his barber smiling in the mirror after a fresh cut." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-02.webp" alt="A client giving a thumbs up after his haircut." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-03.webp" alt="A fresh textured cut and lined beard." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-04.webp" alt="A tight skin fade blended through the sides." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-05.webp" alt="A short crop with a clean fade and beard trim." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-06.webp" alt="A fade finished with a shaped beard." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-07.webp" alt="A long hair cut styled back at the shop." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-08.webp" alt="A textured crop seen from behind." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-09.webp" alt="A clean high fade photographed outside the shop." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-10.webp" alt="A beard being detailed with shears." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-11.webp" alt="A skin fade in profile." width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-12.webp" alt="A tapered cut with a lined beard." width="560" height="700" loading="lazy" decoding="async" /></li>
+              </ul>
+              <ul class="gb-marquee-run" aria-hidden="true">
+                <li><img src="work-01.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-02.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-03.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-04.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-05.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-06.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-07.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-08.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-09.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-10.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-11.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+                <li><img src="work-12.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
+              </ul>
             </div>
+          </div>
 
-            <p class="gb-note gb-reveal">
-              Filmed by
-              <a class="gb-link-brass" href="https://www.youtube.com/@mikebak9743" target="_blank" rel="noopener noreferrer">Mike Bak</a>
-              &middot;
-              <a class="gb-link-brass" href="https://youtu.be/HdtMlkblghU" target="_blank" rel="noopener noreferrer">watch on YouTube</a>
+          <div class="gb-shell">
+            <p class="gb-note gb-reveal" style="margin-top: 2.2rem">
+              More on
+              <a class="gb-link-brass" href="https://www.instagram.com/gentlemensbarbershopbrooklyn/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              and in the
+              <a class="gb-link-brass" href="https://gentlemensbarbershopnyc.com/gallery/" target="_blank" rel="noopener noreferrer">full gallery</a>.
             </p>
           </div>
         </section>
 
-        <!-- ---------------- services ---------------- -->
+<!-- ---------------- services ---------------- -->
         <section class="gb-section gb-section--raise" aria-labelledby="services-h">
           <div class="gb-shell">
             <div class="gb-head gb-reveal">
@@ -370,65 +344,111 @@
           </div>
         </section>
 
-        <!-- ---------------- the work (auto-scrolling marquee) ---------------- -->
-        <section class="gb-section gb-work" aria-labelledby="work-h">
-          <div class="gb-shell">
-            <div class="gb-head gb-reveal">
-              <p class="gb-eyebrow">The Work</p>
-              <h2 class="gb-h2" id="work-h">Fresh out of the chair</h2>
-              <p class="gb-lede" style="margin-top: 1.3rem">
-                Cuts, fades and beard work from the shop&rsquo;s own gallery.
-              </p>
-            </div>
+        <!-- ---------------- quote band ---------------- -->
+        <section class="gb-band" data-parallax-root aria-label="The hot towel finish">
+          <div class="gb-band-media" data-parallax="150">
+            <img
+              src="towel.webp"
+              alt="A folded white towel steaming on a brass tray beside a sprig of eucalyptus."
+              width="1600"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
-
-          <!-- Two identical runs sit side by side; the track translates exactly
-               50% so the loop is seamless. The second run is hidden from
-               assistive tech to avoid announcing every photo twice. -->
-          <div class="gb-marquee" role="group" aria-label="Photos of recent haircuts">
-            <div class="gb-marquee-track">
-              <ul class="gb-marquee-run">
-                <li><img src="work-01.webp" alt="A client and his barber smiling in the mirror after a fresh cut." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-02.webp" alt="A client giving a thumbs up after his haircut." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-03.webp" alt="A fresh textured cut and lined beard." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-04.webp" alt="A tight skin fade blended through the sides." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-05.webp" alt="A short crop with a clean fade and beard trim." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-06.webp" alt="A fade finished with a shaped beard." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-07.webp" alt="A long hair cut styled back at the shop." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-08.webp" alt="A textured crop seen from behind." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-09.webp" alt="A clean high fade photographed outside the shop." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-10.webp" alt="A beard being detailed with shears." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-11.webp" alt="A skin fade in profile." width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-12.webp" alt="A tapered cut with a lined beard." width="560" height="700" loading="lazy" decoding="async" /></li>
-              </ul>
-              <ul class="gb-marquee-run" aria-hidden="true">
-                <li><img src="work-01.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-02.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-03.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-04.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-05.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-06.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-07.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-08.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-09.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-10.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-11.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-                <li><img src="work-12.webp" alt="" width="560" height="700" loading="lazy" decoding="async" /></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="gb-shell">
-            <p class="gb-note gb-reveal" style="margin-top: 2.2rem">
-              More on
-              <a class="gb-link-brass" href="https://www.instagram.com/gentlemensbarbershopbrooklyn/" target="_blank" rel="noopener noreferrer">Instagram</a>
-              and in the
-              <a class="gb-link-brass" href="https://gentlemensbarbershopnyc.com/gallery/" target="_blank" rel="noopener noreferrer">full gallery</a>.
+          <div class="gb-shell gb-band-inner" data-parallax="-34">
+            <p class="gb-eyebrow">The Finish</p>
+            <p class="gb-quote" style="margin-top: 1.4rem">
+              Hot towel, straight razor, and the time to do it properly.
             </p>
           </div>
         </section>
 
-        <!-- ---------------- reviews ---------------- -->
+<!-- ---------------- about ---------------- -->
+        <section class="gb-section" aria-labelledby="about-h">
+          <div class="gb-shell gb-about" data-parallax-root>
+            <div class="gb-reveal">
+              <p class="gb-eyebrow">The Shop</p>
+              <h2 class="gb-h2" id="about-h">A steady chair on Johnson Ave</h2>
+              <p class="gb-lede" style="margin-top: 1.4rem">
+                Gentlemen&rsquo;s Barbershop is a neighbourhood barbershop in East Williamsburg, a
+                few blocks off the Montrose Ave stop. The work is classic barbering — clippers,
+                shears and the straight razor — done carefully and without rushing you out of the
+                chair.
+              </p>
+              <p class="gb-lede" style="margin-top: 1.1rem">
+                Precision scissor work and skin fades are the everyday, and the shop keeps
+                long-hair specialists on the floor for cuts that most barbers would rather not
+                take on.
+              </p>
+              <p class="gb-lede" style="margin-top: 1.1rem">
+                It is the kind of room people come back to: quiet enough to hear yourself think,
+                warm enough to stay a while, and detailed enough that the cut still sits right two
+                weeks later. An easy walk from Bushwick and Greenpoint.
+              </p>
+            </div>
+
+            <figure class="gb-figure gb-figure--tall gb-reveal" data-reveal-delay="120" style="margin: 0">
+              <!-- Mid-depth layer: the image drifts gently inside its frame. -->
+              <img
+                src="tools.webp"
+                alt="A straight razor, shears, a shaving brush, a comb and a jar of pomade laid out on a dark wooden counter."
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                data-parallax="46"
+                style="height: 116%; margin-top: -8%"
+              />
+            </figure>
+          </div>
+        </section>
+
+<!-- ---------------- the shop on film ---------------- -->
+        <section class="gb-section gb-section--raise gb-film-section" aria-labelledby="film-h">
+          <div class="gb-shell">
+            <div class="gb-head gb-reveal">
+              <p class="gb-eyebrow">Meet the shop</p>
+              <h2 class="gb-h2" id="film-h">A minute inside</h2>
+              <p class="gb-lede" style="margin-top: 1.3rem">
+                A walk through the room, from the man who runs it.
+              </p>
+            </div>
+
+            <!-- Click-to-load facade. Nothing is requested from YouTube until
+                 someone presses play — the poster is served from this domain —
+                 so the page costs no third-party JS or cookies on load. -->
+            <div class="gb-film gb-reveal" data-reveal-delay="120">
+              <button
+                class="gb-film-play"
+                type="button"
+                data-video="HdtMlkblghU"
+                aria-label="Play video: Williamsburg's Finest Cuts Are Here — inside Gentlemen's Barbershop"
+              >
+                <img
+                  src="video-poster.webp"
+                  alt="The shop's owner sitting in the barber chair, talking to camera."
+                  width="1280"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="gb-film-btn" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M8 5.14v13.72L19 12z" /></svg>
+                </span>
+              </button>
+            </div>
+
+            <p class="gb-note gb-reveal">
+              Filmed by
+              <a class="gb-link-brass" href="https://www.youtube.com/@mikebak9743" target="_blank" rel="noopener noreferrer">Mike Bak</a>
+              &middot;
+              <a class="gb-link-brass" href="https://youtu.be/HdtMlkblghU" target="_blank" rel="noopener noreferrer">watch on YouTube</a>
+            </p>
+          </div>
+        </section>
+
+<!-- ---------------- reviews ---------------- -->
         <section class="gb-section" aria-labelledby="reviews-h">
           <div class="gb-shell">
             <div class="gb-head gb-reveal">
@@ -497,7 +517,7 @@
           </div>
         </section>
 
-        <!-- ---------------- visit ---------------- -->
+<!-- ---------------- visit ---------------- -->
         <section class="gb-section gb-section--raise" aria-labelledby="visit-h">
           <div class="gb-shell">
             <div class="gb-head gb-reveal">
@@ -559,6 +579,7 @@
             </div>
           </div>
         </section>
+
       </main>
 
       <!-- ---------------- footer ---------------- -->
