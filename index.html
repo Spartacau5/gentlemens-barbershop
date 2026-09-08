@@ -43,6 +43,28 @@
     <!-- The poster frame is the hero's LCP candidate — fetch it early. -->
     <link rel="preload" as="image" href="hero-poster.webp" type="image/webp" />
 
+    <!-- ANALYTICS — paste ONE of these, then delete the rest.
+         All are cookieless, so no consent banner is required and no personal
+         data is collected. Nothing is tracked until a line below is live.
+
+         Cloudflare Web Analytics (free, multi-site — sign up, add this domain,
+         copy the token):
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token":"YOUR_TOKEN_HERE"}'></script>
+
+         GoatCounter (free, open source, lightest of the three):
+    <script data-goatcounter="https://YOURCODE.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
+         Plausible (paid, ~1 kB, nicest dashboard):
+    <script defer data-domain="spartacau5.github.io" src="https://plausible.io/js/script.js"></script>
+
+         To tell WHO opened it, hand each person their own link:
+           .../gentlemens-barbershop/?ref=mike
+         The query string lands in the analytics dashboard as a separate entry,
+         so "did Mike open it" becomes a row you can read.
+    -->
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
